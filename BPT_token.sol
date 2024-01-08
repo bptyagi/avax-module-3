@@ -4,7 +4,7 @@ pragma solidity ^0.8.20;
 import "@openzeppelin/contracts@5.0.1/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts@5.0.1/token/ERC20/extensions/ERC20Burnable.sol";
 
-contract MyToken is ERC20("Bipin", "BPR"), ERC20Burnable {
+contract MyToken is ERC20("Bipin", "BPT"), ERC20Burnable {
     
     address owner;
 
@@ -14,12 +14,12 @@ contract MyToken is ERC20("Bipin", "BPR"), ERC20Burnable {
         owner = initOwner;
     }
 
-    function mint(address addr, uint256 amt ) public  {
+    function mint_BPT(address addr, uint256 amt ) public  {
         require(msg.sender==owner,"only owner can execute mint function");
         _mint(addr,amt);
     }
 
-    function burn(address addr,uint256 amt ) public {
+    function burn_BPT(address addr,uint256 amt ) public {
         require(msg.sender==owner,"only owner can execute mint function");
         _burn(addr,amt);
     }
